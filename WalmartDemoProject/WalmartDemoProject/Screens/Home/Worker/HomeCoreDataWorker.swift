@@ -25,7 +25,7 @@ struct HomeCoreDataWorker {
             switch result {
             case .success:
                 complitionHandle(true)
-                debugPrint("Album responce saved sucessfully")
+                debugPrint("responce saved sucessfully")
             case .failure(let failure):
                 complitionHandle(false)
                 debugPrint(failure.localizedDescription)
