@@ -11,7 +11,7 @@ struct HomeApiWorker {
     
     let url =  URL(string: Utilities.getApi)
     
-    func getTodaysData(completionHandler: @escaping (NewsResponseModel?, Error?) -> Void) {
+    func getTodaysNewsData(completionHandler: @escaping (NewsResponseModel?, String?) -> Void) {
         guard let url = url else {
             completionHandler(nil, nil)
             return
@@ -19,19 +19,17 @@ struct HomeApiWorker {
         let requestUrl = URLRequest(url:  url)
         let task = URLSession.shared.dataTask(with: requestUrl) { data, response, error in
             guard error == nil else {
-                completionHandler(nil, error)
+                completionHandler(nil, error?.localizedDescription ?? "")
                 return
             }
             guard let data = data else {
-                completionHandler(nil, error)
+                completionHandler(nil, error?.localizedDescription ?? "")
                 return
             }
             do {
                 let response = try? JSONDecoder().decode(NewsResponseModel.self, from: data)
                 completionHandler(response, nil)
-            } catch {
-                print(error)
-            }
+            } 
         }
         task.resume()
     }

@@ -7,18 +7,12 @@
 
 import UIKit
 
-protocol HomeTableViewCellDelegate {
-    
-}
-
-
 class HomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var astronomyImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var ExplanationLabel: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

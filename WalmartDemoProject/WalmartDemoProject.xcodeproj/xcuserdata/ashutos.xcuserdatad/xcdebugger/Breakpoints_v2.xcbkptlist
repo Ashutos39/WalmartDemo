@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "76FC9E6B-3C46-496B-B11E-487F7EC4A8A1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WalmartDemoProject/Screens/Home/View/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "updateError(errorStr:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "76FC9E6B-3C46-496B-B11E-487F7EC4A8A1 - 1003bf21bb15741d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WalmartDemoProject.HomeViewController.updateError(errorStr: Swift.String) -&gt; ()"
-                  moduleName = "WalmartDemoProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ashutos/Desktop/github/WalmartDemo/WalmartDemoProject/WalmartDemoProject/Screens/Home/View/HomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "202">
-               </Location>
-               <Location
-                  uuid = "76FC9E6B-3C46-496B-B11E-487F7EC4A8A1 - 272ca15f4d56da66"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in WalmartDemoProject.HomeViewController.updateError(errorStr: Swift.String) -&gt; ()"
-                  moduleName = "WalmartDemoProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ashutos/Desktop/github/WalmartDemo/WalmartDemoProject/WalmartDemoProject/Screens/Home/View/HomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "604A951E-CE43-466B-8ACD-1EDE61A2DC99"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -62,8 +14,8 @@
             filePath = "WalmartDemoProject/Screens/Home/ViewModel/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "getDataForHomeModel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +30,8 @@
             filePath = "WalmartDemoProject/Screens/Home/ViewModel/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "getDataForHomeModel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +46,8 @@
             filePath = "WalmartDemoProject/Screens/Home/ViewModel/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "getDataForHomeModel()"
             landmarkType = "7">
          </BreakpointContent>

@@ -14,20 +14,22 @@ protocol HomeViewModelDelegate: AnyObject {
 }
 
 final class HomeViewModel {
+    
     lazy var apiWorker = HomeApiWorker()
     lazy var coredataWorker = HomeCoreDataWorker()
     
     weak var delegate: HomeViewModelDelegate?
     
     var newsResponseModel: NewsDetails?
-        
+    
     func getDataForHomeModel() {
         coredataWorker.fetchNewsDataFromDB { [weak self] newsDetailsData in
+            //MARK:  if available take from DB
             if newsDetailsData?.date == Date().currentDate() {
                 self?.newsResponseModel = newsDetailsData
                 self?.delegate?.updateUI()
             } else {
-                if Reachability.isConnectedToNetwork(){
+                if Reachability.isConnectedToNetwork() {
                     if let newsData = newsDetailsData {
                         self?.coredataWorker.removeNews(data: newsData) { isSucess in
                             if isSucess {
@@ -35,10 +37,11 @@ final class HomeViewModel {
                             }
                         }
                     } else {
+                        //MARK:  if data not available in DB and call Api
                         self?.getDataFromApi()
                     }
-                }else{
-                    print("Internet Connection not Available!")
+                } else {
+                    //MARK:if network not available take from DB and show error
                     self?.newsResponseModel = newsDetailsData
                     self?.delegate?.updateUIDueToInternet()
                 }
@@ -46,20 +49,19 @@ final class HomeViewModel {
         }
     }
     
-    
     func getDataFromApi() {
-        apiWorker.getTodaysData { [weak self] (newsData, error) in
-            if error != nil {
-                self?.delegate?.updateError(errorStr: error?.localizedDescription ?? "")
+        apiWorker.getTodaysNewsData { [weak self] (newsData, errorStr) in
+            if let errorStr = errorStr {
+                self?.delegate?.updateError(errorStr: errorStr)
             }
             guard let modelData = newsData else {
-                self?.delegate?.updateError(errorStr: error?.localizedDescription ?? "")
+                self?.delegate?.updateError(errorStr: Utilities.somethingWrong)
                 return}
             self?.downloadImageAndUpdateApiData(modelSave: modelData)
         }
     }
 }
-    
+
 private extension HomeViewModel {
     
     func downloadImageAndUpdateApiData(modelSave: NewsResponseModel) {
@@ -70,7 +72,6 @@ private extension HomeViewModel {
             self?.updateModelToCoreData(apiResponse: modelSave, imageData: data)
         }
     }
-    
     
     func updateModelToCoreData(apiResponse: NewsResponseModel, imageData: Data) {
         coredataWorker.saveNewsDataToDB(apiResponse: apiResponse, imageData: imageData) { [weak self] isSucess in

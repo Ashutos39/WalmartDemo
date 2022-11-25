@@ -39,7 +39,7 @@ struct HomeCoreDataWorker {
             switch result {
             case .success(let newsModel):
                 completionHandler(newsModel.first)
-            case .failure(let error):
+            case .failure(_):
                 completionHandler(nil)
             }
         }

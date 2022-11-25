@@ -9,17 +9,16 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    private let viewModel = HomeViewModel()
-
-    @IBOutlet weak var newsTableView: UITableView!
     
+    @IBOutlet weak var newsTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    private let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         setUpUI()
-        // Do any additional setup after loading the view.
     }
 }
 
